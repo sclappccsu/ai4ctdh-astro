@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="The Major Funding Landscape">
+  <h1>I. The Major Funding Landscape (2025–2026)</h1>
+
+  <p>
+    The funding environment for AI in digital humanities has seen significant shifts over the past
+    year, with both unprecedented investments and unexpected program cancellations reshaping the
+    landscape for researchers and institutions.
+  </p>
+
+  <h2>Schmidt Sciences: HAVI Program</h2>
+
+  <p>
+    The <strong>Humanities and Artificial Intelligence (HAVI)</strong> program represents one of the
+    most substantial private investments in AI-driven humanities research to date.
+  </p>
+
+  <ul>
+    <li><strong>Total Investment</strong>: $11 million awarded to 23 interdisciplinary teams in December 2025</li>
+    <li><strong>Next Deadline</strong>: March 13, 2026</li>
+  </ul>
+
+  <p>
+    The HAVI program specifically targets projects that bring together humanists and AI researchers
+    to develop new methodologies for cultural analysis, text processing, and archival work.
+  </p>
+
+  <h2>National Endowment for the Humanities (NEH)</h2>
+
+  <p>
+    The NEH has traditionally been a cornerstone funder for digital humanities initiatives in the
+    United States, though recent changes have created uncertainty in the field.
+  </p>
+
+  <ul>
+    <li><strong>Activity</strong>: Awarded $22.6 million for 219 projects in early 2025</li>
+    <li><strong>Current Status</strong>: The Digital Humanities Advancement Grants program is cancelled for FY2026</li>
+  </ul>
+
+  <p>
+    The cancellation of the DHAG program has prompted many institutions to seek alternative funding
+    sources, including private foundations and international collaborations.
+  </p>
+
+  <div class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg not-prose">
+    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Key Takeaway</h3>
+    <p class="text-stone-700">
+      While federal funding faces uncertainty, private foundations like Schmidt Sciences are
+      stepping in with substantial investments, creating new opportunities for AI-humanities
+      collaborations.
+    </p>
+  </div>
+
+  <nav class="mt-12 flex justify-between not-prose">
+    <a href={base} class="text-amber-700 hover:underline">&larr; Back to Home</a>
+    <a href={`${base}transcription/`} class="text-amber-700 hover:underline">Next: II. Manuscript Transcription &rarr;</a>
+  </nav>
+</Layout>

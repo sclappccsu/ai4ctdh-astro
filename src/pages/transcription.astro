@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Manuscript Transcription (HTR)">
+  <h1>II. Manuscript Transcription (HTR)</h1>
+
+  <p>
+    Handwritten Text Recognition (HTR) has emerged as one of the most transformative applications
+    of AI in digital humanities, enabling researchers to process vast archives of historical
+    documents at unprecedented speeds.
+  </p>
+
+  <h2>The CoMMA Project</h2>
+
+  <p>
+    The <strong>Computational Methods for Medieval Archives (CoMMA)</strong> project has demonstrated
+    the remarkable potential of AI-powered transcription at scale.
+  </p>
+
+  <ul>
+    <li><strong>Achievement</strong>: Transcribed 32,763 medieval manuscripts in just four months (January 2026)</li>
+    <li><strong>Scope</strong>: Covers documents spanning multiple centuries, languages, and scribal traditions</li>
+  </ul>
+
+  <p>
+    This achievement would have taken human scholars decades to accomplish, representing a
+    fundamental shift in how we can approach large-scale archival research.
+  </p>
+
+  <h2>Transkribus Platform</h2>
+
+  <p>
+    <strong>Transkribus</strong> has established itself as the dominant platform for HTR work in
+    the humanities community.
+  </p>
+
+  <ul>
+    <li><strong>Key Advantage</strong>: Avoids the "hallucinations" common in large language models</li>
+    <li><strong>Methodology</strong>: Purpose-built for historical document processing rather than general text generation</li>
+    <li><strong>Community</strong>: Supports collaborative model training across institutions</li>
+  </ul>
+
+  <p>
+    Unlike general-purpose AI systems, Transkribus is specifically designed to transcribe what
+    exists on the page without inventing or interpolating missing content—a critical distinction
+    for scholarly work.
+  </p>
+
+  <div class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg not-prose">
+    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Key Takeaway</h3>
+    <p class="text-stone-700">
+      HTR technology is revolutionizing archival access, but the choice of platform matters—
+      purpose-built tools like Transkribus offer crucial accuracy guarantees that general AI
+      systems cannot match.
+    </p>
+  </div>
+
+  <nav class="mt-12 flex justify-between not-prose">
+    <a href={`${base}funding/`} class="text-amber-700 hover:underline">&larr; Previous: I. Funding Landscape</a>
+    <a href={`${base}archaeology/`} class="text-amber-700 hover:underline">Next: III. Ancient Text Recovery &rarr;</a>
+  </nav>
+</Layout>

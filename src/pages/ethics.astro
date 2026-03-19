@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Ethical Risks & Critical Perspectives">
+  <h1>V. Ethical Risks & Critical Perspectives</h1>
+
+  <p>
+    While AI offers tremendous potential for humanities research, its deployment raises significant
+    ethical concerns that the scholarly community must address. A critical perspective on these
+    technologies is essential for responsible adoption.
+  </p>
+
+  <h2>Training Data Bias</h2>
+
+  <p>
+    AI systems trained on existing digital archives inherit and can amplify the biases embedded
+    in those collections.
+  </p>
+
+  <ul>
+    <li><strong>Problem</strong>: Training data bias leads to "cultural flattening"</li>
+    <li><strong>Manifestation</strong>: Models may perform poorly on underrepresented languages, scripts, or cultural traditions</li>
+    <li><strong>Risk</strong>: AI tools may inadvertently reinforce existing gaps in archival representation</li>
+  </ul>
+
+  <p>
+    When AI models are trained primarily on well-digitized Western European materials, they
+    struggle with texts from other traditions—potentially widening rather than closing gaps
+    in global humanities scholarship.
+  </p>
+
+  <h2>The Scraping Crisis</h2>
+
+  <p>
+    Cultural heritage institutions face an unprecedented challenge from AI companies' data
+    collection practices.
+  </p>
+
+  <ul>
+    <li><strong>Issue</strong>: AI bots systematically scraping GLAM (Galleries, Libraries, Archives, Museums) collections</li>
+    <li><strong>Concern</strong>: Scraping continues regardless of robots.txt restrictions</li>
+    <li><strong>Impact</strong>: Server overloads, bandwidth costs, and questions of consent</li>
+  </ul>
+
+  <p>
+    Many institutions have found that AI training crawlers ignore standard web protocols designed
+    to limit automated access, raising fundamental questions about consent, copyright, and the
+    sustainability of open cultural heritage initiatives.
+  </p>
+
+  <h3>Implications for GLAM Institutions</h3>
+
+  <p>
+    The scraping crisis has forced many institutions to reconsider their open access policies,
+    with some implementing stricter access controls that may limit legitimate research use
+    alongside AI training.
+  </p>
+
+  <div class="mt-10 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg not-prose">
+    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Critical Consideration</h3>
+    <p class="text-stone-700">
+      The enthusiasm for AI in humanities must be tempered by attention to these structural
+      concerns. Without addressing training data bias and respecting institutional boundaries,
+      AI risks reproducing and amplifying existing inequities in scholarly infrastructure.
+    </p>
+  </div>
+
+  <nav class="mt-12 flex justify-between not-prose">
+    <a href={`${base}social-justice/`} class="text-amber-700 hover:underline">&larr; Previous: IV. Social Justice</a>
+    <a href={base} class="text-amber-700 hover:underline">Back to Home &rarr;</a>
+  </nav>
+</Layout>

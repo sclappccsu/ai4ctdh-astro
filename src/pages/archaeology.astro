@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Ancient Text Recovery & Archaeology">
+  <h1>III. Ancient Text Recovery & Archaeology</h1>
+
+  <p>
+    AI is enabling scholars to read texts that have been unreadable for millennia, from damaged
+    inscriptions to carbonized scrolls. These breakthroughs represent some of the most dramatic
+    success stories at the intersection of AI and humanities research.
+  </p>
+
+  <h2>Aeneas (DeepMind)</h2>
+
+  <p>
+    Google DeepMind's <strong>Aeneas</strong> system represents a major advance in computational
+    epigraphy—the study of ancient inscriptions.
+  </p>
+
+  <ul>
+    <li><strong>Capability</strong>: Dates Latin inscriptions within a decade of accuracy</li>
+    <li><strong>Application</strong>: Helps scholars contextualize fragmentary or undated inscriptions</li>
+    <li><strong>Methodology</strong>: Analyzes letter forms, vocabulary, and formulaic patterns</li>
+  </ul>
+
+  <p>
+    The ability to date inscriptions with such precision has profound implications for understanding
+    the evolution of Latin writing and Roman administrative practices.
+  </p>
+
+  <h2>The Vesuvius Challenge</h2>
+
+  <p>
+    Perhaps the most dramatic AI achievement in recent humanities research, the <strong>Vesuvius
+    Challenge</strong> has unlocked texts that have remained unread for two thousand years.
+  </p>
+
+  <ul>
+    <li><strong>Achievement</strong>: Revealed Greek text from 2,000-year-old carbonized scrolls</li>
+    <li><strong>Source</strong>: Papyrus scrolls from Herculaneum, buried by the eruption of Mount Vesuvius in 79 CE</li>
+    <li><strong>Method</strong>: Combines X-ray tomography with AI-powered ink detection and text recognition</li>
+  </ul>
+
+  <p>
+    These scrolls, too fragile to unroll without destruction, can now be "virtually unwrapped" and
+    read using non-invasive imaging combined with machine learning—opening a window into an entire
+    lost library of ancient philosophy.
+  </p>
+
+  <div class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg not-prose">
+    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Key Takeaway</h3>
+    <p class="text-stone-700">
+      AI is not merely accelerating existing research methods—it is enabling entirely new forms
+      of discovery, recovering knowledge that was previously considered permanently lost.
+    </p>
+  </div>
+
+  <nav class="mt-12 flex justify-between not-prose">
+    <a href={`${base}transcription/`} class="text-amber-700 hover:underline">&larr; Previous: II. Manuscript Transcription</a>
+    <a href={`${base}social-justice/`} class="text-amber-700 hover:underline">Next: IV. Social Justice &rarr;</a>
+  </nav>
+</Layout>
