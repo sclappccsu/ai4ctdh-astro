@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout title="Ethical Risks & Critical Perspectives">
+<MainLayout title="Ethical Risks & Critical Perspectives">
   <h1>V. Ethical Risks & Critical Perspectives</h1>
+  <p class="text-lg text-slate-500 -mt-4 mb-8 font-sans">Challenges and Concerns</p>
 
   <p>
     While AI offers tremendous potential for humanities research, its deployment raises significant
@@ -58,17 +58,12 @@ const base = import.meta.env.BASE_URL;
     alongside AI training.
   </p>
 
-  <div class="mt-10 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg not-prose">
-    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Critical Consideration</h3>
-    <p class="text-stone-700">
+  <div class="not-prose my-10 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+    <h3 class="font-serif text-lg font-semibold text-slate-800 mb-2">Critical Consideration</h3>
+    <p class="text-slate-700">
       The enthusiasm for AI in humanities must be tempered by attention to these structural
       concerns. Without addressing training data bias and respecting institutional boundaries,
       AI risks reproducing and amplifying existing inequities in scholarly infrastructure.
     </p>
   </div>
-
-  <nav class="mt-12 flex justify-between not-prose">
-    <a href={`${base}social-justice/`} class="text-amber-700 hover:underline">&larr; Previous: IV. Social Justice</a>
-    <a href={base} class="text-amber-700 hover:underline">Back to Home &rarr;</a>
-  </nav>
-</Layout>
+</MainLayout>

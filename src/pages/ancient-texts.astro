@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout title="Ancient Text Recovery & Archaeology">
+<MainLayout title="Ancient Text Recovery & Archaeology">
   <h1>III. Ancient Text Recovery & Archaeology</h1>
+  <p class="text-lg text-slate-500 -mt-4 mb-8 font-sans">Deciphering the Past with AI</p>
 
   <p>
     AI is enabling scholars to read texts that have been unreadable for millennia, from damaged
@@ -49,16 +49,11 @@ const base = import.meta.env.BASE_URL;
     lost library of ancient philosophy.
   </p>
 
-  <div class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg not-prose">
-    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Key Takeaway</h3>
-    <p class="text-stone-700">
+  <div class="not-prose my-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
+    <h3 class="font-serif text-lg font-semibold text-slate-800 mb-2">Key Takeaway</h3>
+    <p class="text-slate-700">
       AI is not merely accelerating existing research methods—it is enabling entirely new forms
       of discovery, recovering knowledge that was previously considered permanently lost.
     </p>
   </div>
-
-  <nav class="mt-12 flex justify-between not-prose">
-    <a href={`${base}transcription/`} class="text-amber-700 hover:underline">&larr; Previous: II. Manuscript Transcription</a>
-    <a href={`${base}social-justice/`} class="text-amber-700 hover:underline">Next: IV. Social Justice &rarr;</a>
-  </nav>
-</Layout>
+</MainLayout>

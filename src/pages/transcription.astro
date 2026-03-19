@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout title="Manuscript Transcription (HTR)">
+<MainLayout title="Manuscript Transcription (HTR)">
   <h1>II. Manuscript Transcription (HTR)</h1>
+  <p class="text-lg text-slate-500 -mt-4 mb-8 font-sans">Handwritten Text Recognition</p>
 
   <p>
     Handwritten Text Recognition (HTR) has emerged as one of the most transformative applications
@@ -48,17 +48,12 @@ const base = import.meta.env.BASE_URL;
     for scholarly work.
   </p>
 
-  <div class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg not-prose">
-    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Key Takeaway</h3>
-    <p class="text-stone-700">
+  <div class="not-prose my-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
+    <h3 class="font-serif text-lg font-semibold text-slate-800 mb-2">Key Takeaway</h3>
+    <p class="text-slate-700">
       HTR technology is revolutionizing archival access, but the choice of platform matters—
       purpose-built tools like Transkribus offer crucial accuracy guarantees that general AI
       systems cannot match.
     </p>
   </div>
-
-  <nav class="mt-12 flex justify-between not-prose">
-    <a href={`${base}funding/`} class="text-amber-700 hover:underline">&larr; Previous: I. Funding Landscape</a>
-    <a href={`${base}archaeology/`} class="text-amber-700 hover:underline">Next: III. Ancient Text Recovery &rarr;</a>
-  </nav>
-</Layout>
+</MainLayout>

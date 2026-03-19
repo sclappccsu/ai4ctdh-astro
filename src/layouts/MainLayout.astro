@@ -1,0 +1,177 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "AI in Digital Humanities: Projects, Grants, Successes & Risks (2025–2026)" } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+
+const navItems = [
+  { href: `${base}`, label: "Overview", icon: "home" },
+  { href: `${base}funding/`, label: "I. Funding Landscape", icon: "funding" },
+  { href: `${base}transcription/`, label: "II. HTR & Manuscripts", icon: "document" },
+  { href: `${base}ancient-texts/`, label: "III. Ancient Texts", icon: "scroll" },
+  { href: `${base}social-justice/`, label: "IV. Social Justice", icon: "community" },
+  { href: `${base}ethics/`, label: "V. Ethical Risks", icon: "warning" },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === base || href === `${base}`) {
+    return currentPath === base || currentPath === `${base}` || currentPath === `${base}index.html`;
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>{title} | AI in Digital Humanities</title>
+  </head>
+  <body class="min-h-screen bg-slate-50">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-72 bg-slate-900 text-slate-100 flex flex-col fixed h-full">
+        <div class="p-6 border-b border-slate-700">
+          <a href={base} class="block">
+            <h1 class="font-serif text-xl font-bold text-white leading-tight">
+              AI in Digital Humanities
+            </h1>
+            <p class="text-slate-400 text-xs mt-2 font-sans uppercase tracking-wider">
+              CT Digital Humanities Conference
+            </p>
+            <p class="text-slate-500 text-xs font-sans">March 2026</p>
+          </a>
+        </div>
+
+        <nav class="flex-1 p-4 overflow-y-auto">
+          <ul class="space-y-1">
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[
+                    "flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-sm font-medium",
+                    isActive(item.href)
+                      ? "bg-amber-600 text-white shadow-lg shadow-amber-600/20"
+                      : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                  ]}
+                >
+                  <span class="w-5 h-5 flex items-center justify-center">
+                    {item.icon === "home" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                      </svg>
+                    )}
+                    {item.icon === "funding" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
+                    )}
+                    {item.icon === "document" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                      </svg>
+                    )}
+                    {item.icon === "scroll" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+                      </svg>
+                    )}
+                    {item.icon === "community" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                      </svg>
+                    )}
+                    {item.icon === "warning" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                      </svg>
+                    )}
+                  </span>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="p-4 border-t border-slate-700">
+          <p class="text-xs text-slate-500 text-center">
+            Research Report 2025–2026
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 ml-72">
+        <div class="max-w-4xl mx-auto px-8 py-12">
+          <article class="prose prose-slate prose-lg max-w-none
+            prose-headings:font-serif prose-headings:text-slate-800
+            prose-h1:text-4xl prose-h1:font-bold prose-h1:border-b-2 prose-h1:border-slate-200 prose-h1:pb-4 prose-h1:mb-8
+            prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-slate-700
+            prose-h3:text-xl prose-h3:font-semibold prose-h3:text-slate-600
+            prose-p:leading-relaxed prose-p:text-slate-600
+            prose-li:text-slate-600 prose-li:leading-relaxed
+            prose-strong:text-slate-800
+            prose-a:text-amber-700 prose-a:no-underline hover:prose-a:underline
+            prose-ul:my-6 prose-li:my-1
+            ">
+            <slot />
+          </article>
+        </div>
+
+        <footer class="border-t border-slate-200 mt-16">
+          <div class="max-w-4xl mx-auto px-8 py-6">
+            <p class="text-sm text-slate-500 text-center">
+              Prepared for the Connecticut Digital Humanities Conference &mdash; March 2026
+            </p>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  .font-serif {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar for sidebar */
+  aside::-webkit-scrollbar {
+    width: 6px;
+  }
+  aside::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  aside::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+  }
+</style>

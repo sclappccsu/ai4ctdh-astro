@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout title="Social Justice & Underrepresented Communities">
+<MainLayout title="Social Justice & Underrepresented Communities">
   <h1>IV. Social Justice & Underrepresented Communities</h1>
+  <p class="text-lg text-slate-500 -mt-4 mb-8 font-sans">Community-Centered AI</p>
 
   <p>
     AI tools are being deployed to uncover hidden histories and support communities whose voices
@@ -52,17 +52,12 @@ const base = import.meta.env.BASE_URL;
     self-determination.
   </p>
 
-  <div class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg not-prose">
-    <h3 class="font-serif text-lg font-semibold text-stone-800 mb-2">Key Takeaway</h3>
-    <p class="text-stone-700">
+  <div class="not-prose my-10 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
+    <h3 class="font-serif text-lg font-semibold text-slate-800 mb-2">Key Takeaway</h3>
+    <p class="text-slate-700">
       The most successful AI applications in social justice contexts are those developed
       <em>with</em> rather than <em>for</em> communities, ensuring technology serves community-defined
       goals and respects community ownership of cultural heritage.
     </p>
   </div>
-
-  <nav class="mt-12 flex justify-between not-prose">
-    <a href={`${base}archaeology/`} class="text-amber-700 hover:underline">&larr; Previous: III. Ancient Text Recovery</a>
-    <a href={`${base}ethics/`} class="text-amber-700 hover:underline">Next: V. Ethical Risks &rarr;</a>
-  </nav>
-</Layout>
+</MainLayout>
