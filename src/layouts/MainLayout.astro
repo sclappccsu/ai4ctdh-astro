@@ -8,15 +8,15 @@ interface Props {
 
 const { title, description = "AI in Digital Humanities: Projects, Grants, Successes & Risks (2025–2026)" } = Astro.props;
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // Remove trailing slash if present
 
 const navItems = [
-  { href: `${base}`, label: "Overview", icon: "home" },
-  { href: `${base}funding/`, label: "I. Funding Landscape", icon: "funding" },
-  { href: `${base}transcription/`, label: "II. HTR & Manuscripts", icon: "document" },
-  { href: `${base}ancient-texts/`, label: "III. Ancient Texts", icon: "scroll" },
-  { href: `${base}social-justice/`, label: "IV. Social Justice", icon: "community" },
-  { href: `${base}ethics/`, label: "V. Ethical Risks", icon: "warning" },
+  { href: `${base}/`, label: "Overview", icon: "home" },
+  { href: `${base}/funding/`, label: "I. Funding Landscape", icon: "funding" },
+  { href: `${base}/transcription/`, label: "II. HTR & Manuscripts", icon: "document" },
+  { href: `${base}/ancient-texts/`, label: "III. Ancient Texts", icon: "scroll" },
+  { href: `${base}/social-justice/`, label: "IV. Social Justice", icon: "community" },
+  { href: `${base}/ethics/`, label: "V. Ethical Risks", icon: "warning" },
 ];
 
 const currentPath = Astro.url.pathname;
